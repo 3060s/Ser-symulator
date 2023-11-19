@@ -155,23 +155,25 @@
             // 
             // Ulepszenie1
             // 
-            this.Ulepszenie1.Location = new System.Drawing.Point(1016, 139);
+            this.Ulepszenie1.Location = new System.Drawing.Point(1097, 137);
             this.Ulepszenie1.Name = "Ulepszenie1";
             this.Ulepszenie1.Size = new System.Drawing.Size(75, 23);
             this.Ulepszenie1.TabIndex = 9;
             this.Ulepszenie1.Text = "Ulepszenie1";
             this.Ulepszenie1.UseVisualStyleBackColor = true;
             this.Ulepszenie1.Visible = false;
+            this.Ulepszenie1.Click += new System.EventHandler(this.Ulepszenie1_Click);
             // 
             // Ulepszenie2
             // 
-            this.Ulepszenie2.Location = new System.Drawing.Point(1016, 224);
+            this.Ulepszenie2.Location = new System.Drawing.Point(1097, 224);
             this.Ulepszenie2.Name = "Ulepszenie2";
             this.Ulepszenie2.Size = new System.Drawing.Size(75, 23);
             this.Ulepszenie2.TabIndex = 10;
             this.Ulepszenie2.Text = "Ulepszenie2";
             this.Ulepszenie2.UseVisualStyleBackColor = true;
             this.Ulepszenie2.Visible = false;
+            this.Ulepszenie2.Click += new System.EventHandler(this.Ulepszenie2_Click);
             // 
             // Form1
             // 
