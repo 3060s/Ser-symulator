@@ -5,6 +5,8 @@ namespace Clicker_game
 {
     public partial class Form1 : Form
     {
+        // TODO: Dane o konkretnym pracowniku można zgrupować w jakąś klasę lub strukturę
+        //       (potem zrobić tablicę tych pracowników, np. new Worker[])
         private const double _worker1Price = 100.0;
         private const double _worker2Price = 300.0;
         private const double _multiplier1 = 1.0;
@@ -22,8 +24,9 @@ namespace Clicker_game
             UpdateUpgradePrice();
         }
 
-        private void UpdateScore()
+        private void UpdateScore(double term = 0.0)
         {
+            _score += term;
             ScoreLabel.Text = _score.ToString();
         }
 
@@ -34,22 +37,22 @@ namespace Clicker_game
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            _score += _upgradeLevel;
-            UpdateScore();
+            UpdateScore(_upgradeLevel);
         }
 
         private void UpgradeButton_Click(object sender, EventArgs e)
         {
-            if (_upgradePrice < _score)
+            if (_score < _upgradePrice)
             {
-                _score -= _upgradePrice;
-                UpdateScore();
-
-                _upgradeLevel++;
-
-                _upgradePrice += 10;
-                UpdateUpgradePrice();
+                return;
             }
+
+            UpdateScore(-_upgradePrice);
+
+            _upgradeLevel++;
+
+            _upgradePrice += 10;
+            UpdateUpgradePrice();
         }
 
         private void pracownik1_Click(object sender, EventArgs e)
@@ -64,8 +67,7 @@ namespace Clicker_game
             label4.Hide();
             Ulepszenie1.Show();
 
-            _score -= _worker1Price;
-            UpdateScore();
+            UpdateScore(-_worker1Price);
 
             Timer1.Interval = 250;
             Timer1.Start();
@@ -83,8 +85,7 @@ namespace Clicker_game
             label5.Hide(); 
             Ulepszenie2.Show();
 
-            _score -= _worker2Price;
-            UpdateScore();
+            UpdateScore(-_worker2Price);
 
             Timer2.Interval = 250;
             Timer2.Start();
@@ -92,14 +93,14 @@ namespace Clicker_game
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            _score += 1 * _multiplier1;
-            UpdateScore();
+            // TODO: Czy ta jedynka nie powinna być stałą?
+            UpdateScore(1 * _multiplier1);
         }
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
-            _score += 3 * _multiplier2;
-            UpdateScore();
+            // TODO: Czy ta trójka nie powinna być stałą?
+            UpdateScore(3 * _multiplier2);
         }
     }
 }
