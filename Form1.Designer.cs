@@ -42,6 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.Timer2 = new System.Windows.Forms.Timer(this.components);
+            this.Ulepszenie1 = new System.Windows.Forms.Button();
+            this.Ulepszenie2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,12 +156,33 @@
             // 
             this.Timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
+            // Ulepszenie1
+            // 
+            this.Ulepszenie1.Location = new System.Drawing.Point(1016, 139);
+            this.Ulepszenie1.Name = "Ulepszenie1";
+            this.Ulepszenie1.Size = new System.Drawing.Size(75, 23);
+            this.Ulepszenie1.TabIndex = 9;
+            this.Ulepszenie1.Text = "Ulepszenie1";
+            this.Ulepszenie1.UseVisualStyleBackColor = true;
+            this.Ulepszenie1.Click += new System.EventHandler(this.Ulepszenie1_Click);
+            // 
+            // Ulepszenie2
+            // 
+            this.Ulepszenie2.Location = new System.Drawing.Point(1016, 224);
+            this.Ulepszenie2.Name = "Ulepszenie2";
+            this.Ulepszenie2.Size = new System.Drawing.Size(75, 23);
+            this.Ulepszenie2.TabIndex = 10;
+            this.Ulepszenie2.Text = "Ulepszenie2";
+            this.Ulepszenie2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1261, 692);
+            this.Controls.Add(this.Ulepszenie2);
+            this.Controls.Add(this.Ulepszenie1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pracownik2);
@@ -193,6 +216,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.Timer Timer2;
+        private System.Windows.Forms.Button Ulepszenie1;
+        private System.Windows.Forms.Button Ulepszenie2;
     }
 }
 

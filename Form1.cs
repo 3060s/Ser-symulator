@@ -16,12 +16,16 @@ namespace Clicker_game
     public partial class Form1 : Form
     {
 
-        int score = 0;
+        double score = 0.0;
 
         int upgrade_level = 1;
-        int upgrade_price = 10;
-        int pracownik1_cena = 100;
-        int pracownik2_cena = 300;
+        double upgrade_price = 10.0;
+        double pracownik1_cena = 100.0;
+        double pracownik2_cena = 300.0;
+        double multiplier1 = 1.0;
+        double multiplier2 = 1.0;
+        bool pracownik1_kupiony = false;
+        bool pracownik2_kupiony = false;
 
 
         public Form1()
@@ -29,6 +33,15 @@ namespace Clicker_game
             InitializeComponent();
             ScoreLabel.Text = score.ToString();
             label3.Text = $"Cena ulepszenia: {upgrade_price} serów";
+
+            if (pracownik1_kupiony == true)
+            {
+                Ulepszenie1.Show();
+            }
+            else
+            {
+                Ulepszenie1.Hide();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -73,6 +86,7 @@ namespace Clicker_game
         {
             if (pracownik1_cena < score)
             {
+                pracownik1_kupiony = true;
                 pracownik1.Visible = false;
                 label4.Hide();
                 score -= pracownik1_cena;
@@ -86,6 +100,7 @@ namespace Clicker_game
         {
             if (pracownik2_cena < score)
             {
+                pracownik2_kupiony = true;
                 pracownik2.Visible = false;
                 label5.Hide();
                 score -= pracownik2_cena;
@@ -101,16 +116,19 @@ namespace Clicker_game
 
         private void Timer1_Tick_1(object sender, EventArgs e)
         {
-            score++;
+            score += 1 * multiplier1;
             ScoreLabel.Text = score.ToString();
         }
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
-            score++;
-            score++;
-            score++;
+            score += 3 * multiplier2;
             ScoreLabel.Text = score.ToString();
+        }
+
+        private void Ulepszenie1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
